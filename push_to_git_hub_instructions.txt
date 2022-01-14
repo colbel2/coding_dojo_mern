@@ -1,0 +1,3 @@
+git remote add origin https://github.com/colbel2/coding_dojo_mern.git
+git branch -M main
+git push -u origin main
