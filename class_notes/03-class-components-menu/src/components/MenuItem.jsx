@@ -5,11 +5,17 @@ class MenuItem extends Component { //the class name must be the same exact name 
     render() {
         console.log("logging this.props", this.props)
         let {name, price} = this.props 
+        
+        let clickLike = ()=>{
+            console.log("Button Test");
+            alert("you liked it!")
+        }
         return <div>
             <h1>{name}</h1>
             <p>Price: {price} </p>
             {this.props.children} 
             <p>Number of likes: {this.props.likes} </p>
+            <button onClick = {clickLike}>Like</button>
             <div></div>
             <div></div>
             <div></div>
