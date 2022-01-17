@@ -8,7 +8,7 @@ class MenuItem extends Component { //the class name must be the same exact name 
         return <div>
             <h1>{name}</h1>
             <p>Price: {price} </p>
-            <p>Best food ever made!</p>
+            {this.props.children} 
             <p>Number of likes: {this.props.likes} </p>
             <div></div>
             <div></div>
