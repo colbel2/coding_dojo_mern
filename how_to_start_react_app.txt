@@ -1,0 +1,5 @@
+px create-react-app your-project-name-here
+
+navigate to the newly created folder 
+
+npm start
