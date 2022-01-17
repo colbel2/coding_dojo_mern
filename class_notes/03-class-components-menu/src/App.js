@@ -11,7 +11,15 @@ function App() {
   return (
     <div className="App">
       <h1>Chipotle-Finest food in the world</h1>
-      <MenuItem></MenuItem>
+      {/* information you pass down to a component is called a prop */}
+      <MenuItem price = {15.99} name = {"Lions Choice"} likes = {7}></MenuItem>
+      <hr />
+      <MenuItem price = {12.99} name = {"Five Guys"} likes = {5}></MenuItem>
+      <hr />
+      <MenuItem price = {8.99} name = {"Chipotle"} likes = {10000000}></MenuItem>
+      <hr />
+      <MenuItem price = {10.99} name = {"Queerdoba"} likes = {-999999999}></MenuItem>
+      <hr />
     </div>
   ); 
 }

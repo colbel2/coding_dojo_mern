@@ -3,11 +3,13 @@ import React, { Component } from 'react'; // importing React and Compnent from R
 
 class MenuItem extends Component { //the class name must be the same exact name of the file we just made and are working in
     render() {
+        console.log("logging this.props", this.props)
+        let {name, price} = this.props 
         return <div>
-            <h1>Chipotle</h1>
-            <p>Price: $10.99</p>
+            <h1>{name}</h1>
+            <p>Price: {price} </p>
             <p>Best food ever made!</p>
-            <p>Number of likes: 2</p>
+            <p>Number of likes: {this.props.likes} </p>
             <div></div>
             <div></div>
             <div></div>
