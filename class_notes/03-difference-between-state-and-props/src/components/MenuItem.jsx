@@ -1,9 +1,11 @@
 /* Difference between props vs state:
 1. Props are information that we pass down to a component when we render it.
+(Load up the component with initial information.)
 Props are not supposed to be changable. If you want to make information that 
 comes from props changable, you have to put it in state.
 
-2. State is information that can change within a component. Example - weather
+2. State is information that can change within a component and uniquely to
+a specific component. Like the birthday, age, likes in this app. Example - weather
 can change from regio to region. State variables can change from component to component.
 One state variables likes might go up by 1, another may stay the same.*/
 
