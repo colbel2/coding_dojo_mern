@@ -24,7 +24,7 @@ class MenuItem extends Component { //the class name must be the same exact name 
             <p>Price: {price} </p>
             {this.props.children} 
             <p>Number of likes: {this.state.likes} </p>
-            <button onClick = {clickLike}>Like</button>
+            <button onClick = {clickLike}>Like {name}</button>
             <div></div>
             <div></div>
             <div></div>
