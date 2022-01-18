@@ -8,14 +8,14 @@ const PokemonHint = ()=>{
     const getCoins = ()=>{
         console.log("you clicked on that button!")
         //fetch is a function that accepts an api endpoint (some link that gets us data from an api) and it returns a promise. What this means is that the response we get back from the api using fetch will arrive to our application in an undetermined amount of time. This is called a promise. A Promise is a pattern where the eventual response (and how long it will take to receive it) is not known. 
-        fetch("https://pokeapi.co/api/v2/pokemon?limit=150")
+        fetch("https://pokeapi.co/api/v2/pokemon?limit=151")
         //.then means what to do when we eventually get the response back
         .then(response=>{
             return response.json() //convert the respone into json, which is something that javascript can understand
         })
         .then(response=>{
             console.log("response after formatting it to json-->", response)
-            setListOfCoins(response)
+            setListOfCoins(response.results)
         })
 
         //.catch will run if there are any errors in the api that we are getting information from
@@ -36,7 +36,7 @@ const PokemonHint = ()=>{
             <p><button onClick = {getCoins}>Click to get crypto coins showing</button></p>
 
             {
-                listOfCoins.results.map((coinObj, i)=>{
+                listOfCoins.map((coinObj, i)=>{
                     return (
                         <div style = {{border: "1px solid black"}}>
                             <h3>{coinObj.name}</h3>

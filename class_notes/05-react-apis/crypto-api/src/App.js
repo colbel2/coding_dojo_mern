@@ -2,13 +2,15 @@
 import './App.css';
 import CryptoCoinsUsingFetch from './components/CryptoCoinsUsingFetch';
 import CryptoCoinsUsingAxios from './components/CryptoCoinsUsingAxios';
+import PokemonHint from './components/PokemonHint';
 
 function App() {
   return (
     <div className="App">
       <h3>Hello from APP.js</h3>
       {/* <CryptoCoinsUsingFetch> </CryptoCoinsUsingFetch> */}
-      <CryptoCoinsUsingAxios></CryptoCoinsUsingAxios>
+      {/* <CryptoCoinsUsingAxios></CryptoCoinsUsingAxios> */}
+      <PokemonHint></PokemonHint>
     </div>
   );
 }
