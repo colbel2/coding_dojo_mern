@@ -4,7 +4,7 @@ import ColorBox from './components/ColorBox';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App container">
       <h1>Color Box</h1>
       <ColorBox></ColorBox>
       
