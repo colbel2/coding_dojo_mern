@@ -13,10 +13,23 @@ const PetForm = (props) => {
                 <div className="formgroup">
                     <label htmlFor="">Name: </label>
                     <input type="text" name="" id='' className='form-control' onChange={(e)=>setName(e.target.value)}/>
+                    {
+                        name.length < 2?
+                    
+                    <p className='text-danger'>Name must be atleast 2 characters. Right now the name length is {name.length} </p>:
+                    ""
+                    }
+
+                    
                 </div>
                 <div className="formgroup">
                     <label htmlFor="">Age: </label>
                     <input type="number" name="" id='' className='form-control' onChange={(e)=>setAge(e.target.value)}/>
+                    {
+                        age < 0 || age > 100?
+                        <p className="text-danger">Age must be between 0 - 100. Age can't be greater than 100.</p>:
+                    ""}
+
                 </div>
                 <div className="formgroup">
                     <label htmlFor="">Breed: </label>
