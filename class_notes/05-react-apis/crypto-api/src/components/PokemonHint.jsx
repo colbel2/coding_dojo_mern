@@ -1,13 +1,13 @@
 import React, { useState} from 'react';
 
-const CryptoCoinsUsingFetch = ()=>{
+const PokemonHint = ()=>{
 
     let [listOfCoins, setListOfCoins] = useState([])
 
     const getCoins = ()=>{
         console.log("you clicked on that button!")
         //fetch is a function that accepts an api endpoint (some link that gets us data from an api) and it returns a promise. What this means is that the response we get back from the api using fetch will arrive to our application in an undetermined amount of time. This is called a promise. A Promise is a pattern where the eventual response (and how long it will take to receive it) is not known. 
-        fetch("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false")
+        fetch("https://pokeapi.co/api/v2/pokemon?limit=151")
         //.then means what to do when we eventually get the response back
         .then(response=>{
             return response.json()
@@ -39,7 +39,7 @@ const CryptoCoinsUsingFetch = ()=>{
             {
                     listOfCoins.map((coinObj, i)=>{
                         return(
-                            <div style = {{border: "1px solid black"}}>
+                            <div>
                                 <h3>{coinObj.name}</h3>
                                 <p>{coinObj.current_price}</p>
                                 <img src={coinObj.image} alt="" />
@@ -52,4 +52,4 @@ const CryptoCoinsUsingFetch = ()=>{
 }
 
 
-export default CryptoCoinsUsingFetch;
+export default PokemonHint;
