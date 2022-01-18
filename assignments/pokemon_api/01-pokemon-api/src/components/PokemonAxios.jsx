@@ -7,13 +7,13 @@ const PokemonAxios = (props)=>{
     let [listOfPokemon, setListOfPokemon] = useState([])
 
     const getPokemon = ()=>{
-        console.log("you clicked on that button!")
+        console.log("you clicked on that button!", listOfPokemon)
         
         axios.get("https://pokeapi.co/api/v2/pokemon?limit=807")
         
         .then(response=>{
-            console.log("response after formatting it to json-->", response)
-            setListOfPokemon(response)
+            console.log(response.data.results)
+            setListOfPokemon(response.data.results)
         })
 
     
@@ -46,3 +46,4 @@ const PokemonAxios = (props)=>{
 
 
 export default PokemonAxios;
+
