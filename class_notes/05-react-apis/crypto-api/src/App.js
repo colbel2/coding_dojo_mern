@@ -9,8 +9,8 @@ function App() {
     <div className="App">
       <h3>Hello from APP.js</h3>
       {/* <CryptoCoinsUsingFetch> </CryptoCoinsUsingFetch> */}
-      {/* <CryptoCoinsUsingAxios></CryptoCoinsUsingAxios> */}
-      <PokemonHint></PokemonHint>
+      <CryptoCoinsUsingAxios></CryptoCoinsUsingAxios>
+      {/* <PokemonHint></PokemonHint> */}
     </div>
   );
 }
