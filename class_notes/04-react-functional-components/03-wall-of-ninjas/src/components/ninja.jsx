@@ -4,6 +4,8 @@ const Ninja =(props)=>{
     let [ninjaName, setNinjaName] = useState("");
     let [imageUrl, setImageUrl] = useState("");
     let [favColor, setFavColor] = useState("");
+    let [graduate, setGraduate] = useState(false);
+
 
     // let listOfNinjas = [];
     // create a state variable to store every ninja submitted in form
@@ -13,13 +15,25 @@ const Ninja =(props)=>{
         e.preventDefault(); // the default behavior of a form is to reload the page when submitting. This line prevents that. 
         console.log("Submitted the form")
         console.log(ninjaName,imageUrl,favColor)
-        let ninjaObj = {ninjaName:ninjaName, imageUrl:imageUrl, favColor:favColor} //you can also just do let ninjaObj = {ninjaName, imageUrl, favColor} and it will work the same way
+        let ninjaObj = {ninjaName:ninjaName, imageUrl:imageUrl, favColor:favColor, graduate:graduate} //you can also just do let ninjaObj = {ninjaName, imageUrl, favColor} and it will work the same way
         console.log(ninjaObj);
 
         setListOfNinjas([...listOfNinjas, ninjaObj])
     }
     
-    
+    //graduate student function
+
+    const toggleGraduation = (i)=> {
+        // console.log("Testing checkbox")
+        console.log("Checking i", i)
+        
+        let [...copyOfListOfNinjas] = listOfNinjas;
+        copyOfListOfNinjas[i].graduate = !copyOfListOfNinjas[i].graduate
+
+        console.log(listOfNinjas)
+        setListOfNinjas(copyOfListOfNinjas);
+
+    }
     
     return (
         <div>
@@ -42,12 +56,13 @@ const Ninja =(props)=>{
         <h3>Here are our list of Ninjas!</h3>
 
         {
-            listOfNinjas.map((ninja)=>{
+            listOfNinjas.map((ninja, i)=>{
                 return (
-                    <div style = {{border: "1px solid black", backgroundColor: ninja.favColor, display: "inline-block"}}>
-                        <h1>{ninja.ninjaName}</h1>
+                    <div key = {i} style = {{border: "1px solid black", backgroundColor: ninja.favColor, display: "inline-block", textDecoration: ninja.graduate? 'line-through': "none"}}>
+                        <h1>{ninja.ninjaName}{i}</h1>
                         <p><img src={ninja.imageUrl} alt="" width = "200px" height = "200px"/></p>
                         <p>Favorite Color: {ninja.favColor}</p>
+                        <p><input type="checkbox" name="" id="" onClick={()=>toggleGraduation(i)} />Graduate</p>
                     </div> 
                 )
             })
