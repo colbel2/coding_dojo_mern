@@ -99,3 +99,17 @@ const Ninja = (props) =>{
 
 
 export default Ninja;
+
+
+
+
+
+
+
+/**
+ 
+Option 1: Monday morning 11am CT-1pm CT
+Option 2: Monday PM 6pm CT-8pm CT
+
+
+ */
