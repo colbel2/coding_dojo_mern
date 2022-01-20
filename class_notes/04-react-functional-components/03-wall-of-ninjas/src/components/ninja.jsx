@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import styles from './Ninja.module.css';
 
 const Ninja =(props)=>{
     let [ninjaName, setNinjaName] = useState("");
@@ -58,7 +59,7 @@ const Ninja =(props)=>{
         {
             listOfNinjas.map((ninja, i)=>{
                 return (
-                    <div key = {i} style = {{border: "1px solid black", backgroundColor: ninja.favColor, display: "inline-block", textDecoration: ninja.graduate? 'line-through': "none"}}>
+                    <div className={styles.ninja} key = {i} style = {{ backgroundColor: ninja.favColor, textDecoration: ninja.graduate? 'line-through': "none"}}>
                         <h1>{ninja.ninjaName}{i}</h1>
                         <p><img src={ninja.imageUrl} alt="" width = "200px" height = "200px"/></p>
                         <p>Favorite Color: {ninja.favColor}</p>
