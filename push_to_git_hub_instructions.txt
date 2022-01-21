@@ -3,3 +3,8 @@ git add .
 git commit -m "note about what you are uploading"
 
 git push
+
+
+
+
+git clone then copy and paste the link to the entire main page of the repository you are tryng to copy 
