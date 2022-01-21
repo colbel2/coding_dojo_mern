@@ -5,7 +5,7 @@ import Todo from './components/Todo';
 function App() {
   return (
     <div className="App container">
-      <h2></h2>
+      <h2>Hello from App.jsx</h2>
       <Todo>
         
       </Todo>
