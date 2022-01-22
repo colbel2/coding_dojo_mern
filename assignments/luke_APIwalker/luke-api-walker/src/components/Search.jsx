@@ -27,12 +27,17 @@ const Search = () => {
                 <div className="form-group">
                     <label htmlFor="">Search For:</label>
                     <select className="form-select" name="" id="">
-                        <option value="">people</option>
+                        {options.map((opt,i)=>{
+                            return(
+                                <option key={i} value={opt}>{opt}</option>
+                            )
+                        })}
+                        {/* <option value="">people</option>
                         <option value="">planets</option>
                         <option value="">films</option>
                         <option value="">species</option>
                         <option value="">vehicles</option>
-                        <option value="">starships</option>
+                        <option value="">starships</option> */}
                     </select>
                 </div>
                 <div className="form-group">
