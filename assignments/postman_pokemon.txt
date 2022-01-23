@@ -1,0 +1,9 @@
+https://pokeapi.co/api/v2/pokemon?limit=151
+
+https://pokeapi.co/api/v2/egg-group/3
+
+https://pokeapi.co/api/v2/ability/4
+
+https://pokeapi.co/api/v2/move-target/5
+
+https://pokeapi.co/api/v2/move-learn-method/6
