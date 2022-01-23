@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import Axios from 'axios';
 import axios from 'axios';
+import { useHistory } from "react-router-dom";
 
 
 const Search = () => {
     let[options,setOptions] = useState([])
 
-    let[selectedOption,setSelectedOption] = useState()
+    let[selectedOption,setSelectedOption] = useState("people")
     let[id,setId] = useState(null)
+
+    const history = useHistory();
     
     useEffect(()=>{
         axios.get("https://swapi.dev/api/")
@@ -16,17 +19,21 @@ const Search = () => {
         Object.keys(response.data)
         console.log(response.data)
         setOptions(Object.keys(response.data))
-        setSelectedOption(Object.keys(response.data)[0])
+        // setSelectedOption(Object.keys(response.data)[0])
     })
     .catch(err=>{
         console.log("Error ABORT!===>",err)
     })
     }, [])
     
-
+    const handlerForm = (e)=>{
+        e.preventDefault();
+        console.log("submitted!")
+        history.push(`/${selectedOption}/${id}`)
+    }
     return (
         <div>
-            <form className="d-flexjustify-content-between"action="">
+            <form onSubmit={handlerForm} className="d-flexjustify-content-between"action="">
                 <div className="form-group">
                     <label htmlFor="">Search For:</label>
                     <select onChange = {(e)=>{setSelectedOption(e.target.value)}} className="form-select" name="" id="">
@@ -47,6 +54,9 @@ const Search = () => {
 
                     <label htmlFor="">ID:</label>
                     <input onChange = {(e)=>{setId(e.target.value)}} type="number" name="" id="" className="form-control" />
+                </div>
+                <div className='form-group'>
+                    <input type="submit" value='Search' className='btn btn-success'/>
                 </div>
             </form>
         </div>
