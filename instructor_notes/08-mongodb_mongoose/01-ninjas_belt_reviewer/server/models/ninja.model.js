@@ -25,5 +25,5 @@ const NinjaSchema = new mongoose.Schema({
 
 //Here we are creating a variable "Ninja" which is going to represent the name of our table (collection). 
 const Ninja = mongoose.model('Ninja', NinjaSchema); //mongoose is creating a table called "Ninja" using the instructions from "NinjaSchema"
- 
+
 module.exports = Ninja;

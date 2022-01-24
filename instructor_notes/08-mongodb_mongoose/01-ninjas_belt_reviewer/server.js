@@ -6,6 +6,10 @@ const app = express(); //initialize express
 const port = 8000; //specify port in variable 
 
 
+//need these two lines below to be able to read and extract the information received from post requests
+app.use(express.json())
+app.use(express.urlencoded({extended:true})) //be able to read form information
+
 
 //connecting to our mongodb database using mongoose
 require("./server/config/config")
