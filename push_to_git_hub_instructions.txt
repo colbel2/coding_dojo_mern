@@ -23,3 +23,7 @@ git clone // then the github address of the repository you want to download to d
 
 
 git pull //then the github address of the repository that already has been cloned - note you have to be inside the parent folder of the repo file
+
+
+
+*pythontutor.com helpful site for algo
