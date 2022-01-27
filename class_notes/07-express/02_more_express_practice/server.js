@@ -4,7 +4,9 @@ const port = 8000; //sets port to 8000, do not set to 3000. Really no reason to 
 
 
 
-
+app.get("/api/hello", (req,res)=>{
+    res.json({msg:"hello express"}) //respond with json and return an object
+}) //accepts a route and a function. we will use an arrow function with 2 parameters. req and res. it could be named anything but the first word is a request and the 2nd is a response. common practice is req,res
 
 
 
