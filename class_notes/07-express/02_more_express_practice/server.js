@@ -38,13 +38,23 @@ app.post("/api/quotes",(req,res)=>{
 })
 
 //update a quote
-app.put("/api/quotes",(req,res)=>{
-    
+app.put("/api/quotes/:idx",(req,res)=>{
+    //two parts go into a put request. what do we want to update (:idx) and what are we updating with (req.body)
+    quotes[req.params.idx] = req.body // update array at index from route and updated with form information
+    res.json({count: quotes.length,results: quotes})
 })
 
 //delete a quote
-app.delete("/api/quotes", (req,res)=>{
-
+app.delete("/api/quotes/:idx", (req,res)=>{
+    //use splice to remove something from an array.
+    quotes.splice(req.params.idx,1)
+    res.json({count: quotes.length,results: quotes})
 })
+
+//testing my nodemon global install
+app.get("/api/testpage", (req,res)=>{
+    res.json({msg:"nodemon test passed!"})
+})
+
 // this needs to below the other code blocks. put at the very end of the file.
 app.listen( port, () => console.log(`Listening on port: ${port}`) ); //listens for a port number(port) and accepts a function. this function is called a call back function. The call back function is currently an arrow function that gives a console . log with a message so we know its working
