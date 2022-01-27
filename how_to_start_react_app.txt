@@ -8,3 +8,6 @@ npm start
 npm install react-router-dom@5
 npm install axios
 npm install express
+
+
+postman notes, to post you must select Body and x-www-form-urlencoded
