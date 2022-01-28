@@ -19,3 +19,19 @@ npm install @faker-js/faker --save-dev
 
 npm init -y
 npm install mongoose express
+
+
+create project folder
+install express and mongoose
+    create server.js
+        import express
+        create variable app to allow us to use instances of express. use express functionality
+        create port variable
+        put last line of code to listen to server
+        keep everything modularized by using config folder and routes folder
+        call on routes folder for routes
+    create server folder
+        create config, controllers, models, routes folder inside server folder
+            config folder has information about which database we are connected to and the mongoose connected
+            routes folder connected to controller that exports a function. all routes will be put here. connect to controller file and use functions to call on routes
+            controller file 
