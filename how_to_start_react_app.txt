@@ -16,3 +16,6 @@ postman notes, to post you must select Body and x-www-form-urlencoded
 faker
 npm init -y
 npm install @faker-js/faker --save-dev
+
+npm init -y
+npm install mongoose express
