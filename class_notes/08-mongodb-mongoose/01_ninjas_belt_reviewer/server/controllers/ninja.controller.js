@@ -6,6 +6,7 @@ module.exports.sayHello = (req,res)=>{
 }
 
 module.exports.findAllNinjas = (req, res) => {
+    console.log("Trying to find all ninjas")
     Ninja.find()
         .then(allNinjas=>{
             res.json({results: allNinjas})
