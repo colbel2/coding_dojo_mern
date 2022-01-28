@@ -1,24 +1,26 @@
 import logo from './logo.svg';
 import './App.css';
-
+import NewNinjaForm from './components/NewNinjaForm';
+import {
+  BrowserRouter,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <BrowserRouter>
+    <div className="App container">
+      <h1>Javascript Full Stack MERN</h1>
+      <Switch>
+        <Route exact path = "/">
+          <NewNinjaForm></NewNinjaForm>
+        </Route>
+      
+      
+      </Switch>
     </div>
+    </BrowserRouter>
   );
 }
 
