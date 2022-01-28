@@ -36,8 +36,29 @@ module.exports.updateExistingNinja = (req, res) => {
         .catch(err => res.json({ message: 'Something went wrong', error: err }));
 }
 
-module.exports.deleteNinja = (req, res) => {
-    Ninja.deleteOne({ _id: req.params.id })
-        .then(result => res.json({ results: deleteNinja }))
-        .catch(err => res.json({ message: 'Something went wrong', error: err }));
+module.exports.deleteNinja = (req,res)=>{
+    console.log("trying to delete ninja!")
+
+    Ninja.deleteOne({_id: req.params.id})
+        .then(deletedNinja =>{
+            res.json({results: deletedNinja})
+        })
+        .catch(err=> res.json({ message: 'Something went wrong', error: err }))
 }
+
+module.exports.findRandomNinja = (req,res)=>{
+    console.log("trying to find a random ninja!")
+
+    function getRandomInt(max) {
+        return Math.floor(Math.random() * max);
+      }
+    //get all the ninjas first, and pick a random index from that array
+    Ninja.find()
+        .then(allNinjas=>{
+            let randomIndex = getRandomInt(allNinjas.length)
+            res.json({results: allNinjas[randomIndex]})
+        })
+        .catch(err=> res.json({ message: 'Something went wrong', error: err }))
+}
+
+

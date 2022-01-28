@@ -10,7 +10,7 @@
 
 // import controller file and give it a variable name to reference
 const NinjaController = require("../controllers/ninja.controller")
-
+//these are backend routes also know as API endpoints
 module.exports =(app)=>{
     app.get("/api/hello", NinjaController.sayHello)
     app.get("/api/ninjas",NinjaController.findAllNinjas)
@@ -18,4 +18,5 @@ module.exports =(app)=>{
     app.post("/api/create", NinjaController.createNewNinja)
     app.put("/api/ninjas/:id",NinjaController.updateExistingNinja)
     app.delete("/api/ninjas/:id",NinjaController.deleteNinja)
+    app.get("/api/random",NinjaController.findRandomNinja)
 }
