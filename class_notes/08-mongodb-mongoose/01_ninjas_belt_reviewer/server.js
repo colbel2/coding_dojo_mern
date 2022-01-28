@@ -5,14 +5,13 @@ const { json } = require('express');
 const app = express(); //initializing express
 const port = 8000; //specify port in variable
 
+app.use(express.json())
+app.use(express.urlencoded({extended:true}))
+
 //mongodb database connecting to mongoose
 require("./server/config/config") // says all code from this file is now on this line
 
 
-//route to hello world to test connection
-// app.get("/api/hello", (req,res)=>{
-//     res.json({msg: "Hello mongoose world"})
-// })
 
 require("./server/routes/ninja.routes")(app)
 

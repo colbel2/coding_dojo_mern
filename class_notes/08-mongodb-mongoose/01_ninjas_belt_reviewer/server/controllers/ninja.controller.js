@@ -13,3 +13,31 @@ module.exports.findAllNinjas = (req, res) => {
         .catch(err => res.json({ message: 'Something went wrong', error: err }));
 }
 
+module.exports.findOneNinja = (req, res) => {
+    Ninja.findOne({ _id: req.params.id })//the id in req.params.id on controller file must match whatever is on the routes file for the route variable /:id
+        .then(oneNinja => res.json({ results: oneNinja }))
+        .catch(err => res.json({ message: 'Something went wrong', error: err }));
+}
+
+module.exports.createNewNinja = (req, res) => {
+    console.log("REQ.body===>",req.body)
+    Ninja.create(req.body)
+        .then(newlyCreatedNinja => res.json({ results: newlyCreatedNinja }))
+        .catch(err => res.json({ message: 'Something went wrong', error: err }));
+}
+
+module.exports.updateExistingNinja = (req, res) => {
+    Ninja.findOneAndUpdate(
+        { _id: req.params.id },
+        req.body,
+        { new: true, runValidators: true }
+    )
+        .then(updatedNinja => res.json({ results: updatedNinja }))
+        .catch(err => res.json({ message: 'Something went wrong', error: err }));
+}
+
+module.exports.deleteNinja = (req, res) => {
+    Ninja.deleteOne({ _id: req.params.id })
+        .then(result => res.json({ results: deleteNinja }))
+        .catch(err => res.json({ message: 'Something went wrong', error: err }));
+}
