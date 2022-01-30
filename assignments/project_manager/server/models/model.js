@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 
-const ProjectManagerSchema = new mongoose.Schema({
+const ProductManagerSchema = new mongoose.Schema({
     title: {
         type: String,
         required: [true, "Title is required!"],
@@ -18,6 +18,6 @@ const ProjectManagerSchema = new mongoose.Schema({
 });
 
 
-const ProjectManager = mongoose.model('ProjectManager', ProjectManagerSchema);
+const ProductManager = mongoose.model('ProductManager', ProductManagerSchema);
 
-module.exports = ProjectManager;
+module.exports = ProductManager;

@@ -1,31 +1,21 @@
 //import the controller file and give it a variable name to reference
-const ProjectManagerController = require("../controllers/controller")
+const ProductController = require("../controllers/controller")
 
 
 
 //these are your backend routes---AKA api endpoints
 module.exports = (app)=>{
-    app.get("/api/projectmanager", ProjectManagerController.sayHello)
-    //more routes here
 
-    // //to get all of something
-    // app.get("/api/ninjas", NinjaController.findAllNinjas)
+    app.get("/api/products", ProductController.findAllProducts)
 
 
-    // //to create something new
-    // app.post("/api/ninjas", NinjaController.createNewNinja)
+    app.post("/api/products", ProductController.createNewProduct)
 
-    // //find a random ninja
-    // app.get("/api/ninjas/random", NinjaController.findRandomNinja)
+    app.get("/api/products/:id", ProductController.findOneProduct)
 
-    // //get one of something
-    // app.get("/api/ninjas/:id", NinjaController.findOneNinja)
-
-    // //update one of something
-    // app.put("/api/ninjas/:id", NinjaController.updateNinja)
+    app.put("/api/products/:id", ProductController.updateProduct)
     
-    // //delete one of something
-    // app.delete("/api/ninjas/:id", NinjaController.deleteNinja)
+    app.delete("/api/products/:id", ProductController.deleteProduct)
     
     
     

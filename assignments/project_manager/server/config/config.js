@@ -1,6 +1,6 @@
 const mongoose = require('mongoose'); //import mongoose
 
-const db_name = "ProjectManager";
+const db_name = "ProductManager";
 
 mongoose.connect(`mongodb+srv://root:root@projectmanager.owgvb.mongodb.net/${db_name}?retryWrites=true&w=majority`, {
     useNewUrlParser: true,

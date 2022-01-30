@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useHistory } from "react-router-dom";
 
 
-const ProjectManagerForm = (props) => {
+const NewProductForm = (props) => {
 
     let [title, setTitle] = useState("")
     let [price, setPrice] = useState("")
@@ -13,25 +13,19 @@ const ProjectManagerForm = (props) => {
 
     const history = useHistory();
 
-    const createProjectManagerHandler = (e)=>{
-        e.preventDefault(); //prevent the form from reloading the whole page
-
+    const createProductSubmitHandler = (e)=>{
+        e.preventDefault();
 
         let formInfoObj = {title, price, description};
 
-        axios.post("http://localhost:8000/api/projectmanager", formInfoObj) 
+        axios.post("http://localhost:8000/api/products", formInfoObj)
             .then(res=>{
-                console.log("response after posting", res)
+                console.log("response after creating product", res)
 
-                if(res.data.error){ //validation errors happened
-                    //res.data.error.errors contains an object that has my validation error messages for each input
+                if(res.data.error){
                     setFormErrors(res.data.error.errors)
                 }else{
-                    //else if the form was filled out properly and it successfully created someone new, update the newNinjaAdded variable so that it triggers the allninjas component re-gather the new list of ninjas
-                    props.setProjectManagerAdded(!props.newProjectManagerAdded)
-
-                    //if the form was in separate route than all ninjas component, then you can redirect to "/" after form submits using history.push("/")
-                    // history.push("/")
+                    props.setNewProductAdded(!props.newProductAdded)
                 }
             })
             .catch(err=>console.log("error in submitting post request",err))  
@@ -40,11 +34,11 @@ const ProjectManagerForm = (props) => {
 
     return (
         <div>
-            <form onSubmit = {createProjectManagerHandler}>
+            <form onSubmit = {createProductSubmitHandler}>
                 <div className="form-group">
                     <label htmlFor="">Title</label>
                     <input onChange = {(e)=>{setTitle(e.target.value)}} type="text" name="" id="" className="form-control" />
-                    <p className="text-danger">{formErrors.Title?.message}</p>
+                    <p className="text-danger">{formErrors.title?.message}</p>
                 </div>
                 <div className="form-group">
                     <label htmlFor="">Price</label>
@@ -64,4 +58,4 @@ const ProjectManagerForm = (props) => {
     );
 };
 
-export default ProjectManagerForm;
+export default NewProductForm;

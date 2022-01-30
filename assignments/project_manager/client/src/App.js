@@ -1,7 +1,10 @@
 
 import './App.css';
 import React, {useState} from 'react';
-import ProjectManagerForm from './components/ProjectManagerForm';
+import NewProductsForm from './components/NewProductsForm';
+import AllProducts from './components/AllProducts';
+import EditProducts from './components/EditProducts';
+import OneProduct from './components/OneProduct';
 
 import {
   BrowserRouter, 
@@ -12,28 +15,28 @@ import {
 
 
 function App() {
-  let [newProjectManagerAdded, setNewProjectManagerAdded] = useState(false)
+  let [newProductAdded, setNewProductAdded] = useState(false)
   return (
     <BrowserRouter>
       <div className="App container">
         <h1>Project Manager</h1>
         <Switch>
           <Route exact path= "/">
-            <ProjectManagerForm newProjectManagerAdded={newProjectManagerAdded} newProjectManagerAdded= {newProjectManagerAdded} ></ProjectManagerForm>
+            <NewProductsForm newProductAdded={newProductAdded} setNewProductAdded= {setNewProductAdded} ></NewProductsForm>
             <hr />
-            {/* <AllProjects newProjectManagerAdded={newProjectManagerAdded}></AllProjects> */}
+            <AllProducts newProductAdded={newProductAdded}></AllProducts>
           </Route>
-          {/* <Route exact path = "/new">
+          <Route exact path = "/new">
             
-          </Route> */}
-
-          {/* <Route exact path = "/projectmanager/:id">
-            <OneProject></OneProject>
           </Route>
 
-          <Route exact path = "/projectmanager/edit/:id">
-            <EditProjectForm/>
-          </Route> */}
+          <Route exact path = "/products/:id">
+            <OneProduct></OneProduct>
+          </Route>
+
+          <Route exact path = "/products/edit/:id">
+            <EditProducts></EditProducts>
+          </Route>
 
         </Switch>
       </div>
