@@ -1,7 +1,7 @@
 const mongoose = require('mongoose'); //import mongoose so that we can use mongoose to make a table
  
 
-//the new mongoose.Schema({}) just allows us to write the instructions for what each ninja should have. The ID field is auto-generated so we don't need to include it here
+//the new mongoose.Schema({}) just allows us to write the instructions for what each ninja should have in a Ninja table. The _id field is auto-generated so we don't need to include it here
 const NinjaSchema = new mongoose.Schema({
     firstName: {
         type: String,
@@ -27,3 +27,4 @@ const NinjaSchema = new mongoose.Schema({
 const Ninja = mongoose.model('Ninja', NinjaSchema); //mongoose is creating a table called "Ninja" using the instructions from "NinjaSchema"
 
 module.exports = Ninja;
+

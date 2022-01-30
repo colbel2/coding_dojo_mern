@@ -1,6 +1,6 @@
 //import the controller file and give it a variable name to reference
 const NinjaController = require("../controllers/ninja.controller")
-const Ninja = require("../models/ninja.model")
+
 
 
 //these are your backend routes---AKA api endpoints

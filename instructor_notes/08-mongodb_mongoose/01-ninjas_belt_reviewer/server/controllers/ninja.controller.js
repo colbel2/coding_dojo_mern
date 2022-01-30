@@ -27,13 +27,13 @@ module.exports.findOneNinja = (req, res) => {
 
 module.exports.createNewNinja = (req, res) => {
     console.log("trying to create ninja!")
-
     console.log("REQ.BODY--->",req.body)
     Ninja.create(req.body) //req.body represents the form info
         .then(newlyCreatedNinja =>{
             res.json({results: newlyCreatedNinja})
         })
-        .catch(err=> res.json({ message: 'Something went wrong', error: err }))
+        //if theres validation errors
+        .catch(err=> res.json({ message: 'Something went wrong', error: err })) 
 }
 
 
