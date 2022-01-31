@@ -8,6 +8,6 @@ app.use(express.urlencoded({extended:true}))
 app.use(cors()) 
 
 require("./server/config/config")
-// require('./server/routes/exam.route')(app)
+require('./server/routes/exam.route')(app)
 
 app.listen( port, () => console.log(`Listening on port: ${port}`) );
