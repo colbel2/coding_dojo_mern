@@ -16,32 +16,31 @@ const AllPets = (props) => {
             })
             .catch(err=> console.log("ERROR", err))
     },[deleted, props.newPetAdded ]) 
-
-    const deletePet = (petID)=>{
-
-        axios.delete(`http://localhost:8000/api/pets/${petID}`)
-            .then(res=>{
-                console.log("Program response to deleting a pet===>", res)
-                setDeleted(!deleted)
-            })
-            .catch(err=> console.log("ERROR", err))
-    }
-
+    
     return (
         <div>
-            <h3>These Pets are looking for a good home!</h3>
+            
             {allPets.map((petObj, i)=>{
                 return(
-                    <div key={i} style = {{border: "1px solid black"}}>
-                        <h4><Link to={`/pets/${petObj._id}`}>{petObj.name}</Link></h4>
-                        <p>Pet Type: {petObj.type}</p>
-                        <p>Id: {petObj._id}</p>
-                        <p>
-                            <Link to={`/pets/${petObj._id}`} className = "btn btn-info" >Details</Link> | &nbsp; 
-                            <Link to={`/pets/edit/${petObj._id}`} className = "btn btn-warning" >Edit</Link> | &nbsp;
-                            {/* <button onClick = {()=>deletePet(petObj._id)} className="btn btn-danger">Delete Ninja</button> */}
-                        </p>
-                        
+                    <div className='container' key={i} style = {{border: "1px solid black"}}>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Type</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><h4>{petObj.name}</h4></td>
+                                    <td>{petObj.type}</td>
+                                    <td><Link to={`/pets/${petObj._id}`} className = "btn btn-info" >Details</Link> | &nbsp; 
+                                        <Link to={`/pets/edit/${petObj._id}`} className = "btn btn-warning" >Edit</Link> | &nbsp;
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
 
                     </div>
                 )

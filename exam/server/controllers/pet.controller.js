@@ -7,7 +7,7 @@ module.exports.findAllPets = (req, res) => {
         .then(allPets => {
             res.json({ results: allPets })
         })
-        .catch(err => res.json({ message: 'ERROR: There is a problem', error: err }))
+        .catch(err => res.json({ message: 'ERROR: There is a problem, figure it out', error: err }))
 }
 
 module.exports.findOnePet = (req, res) => {
@@ -17,7 +17,7 @@ module.exports.findOnePet = (req, res) => {
         .then(singlePet => {
             res.json({ results: singlePet })
         })
-        .catch(err => res.json({ message: 'ERROR: There is a problem', error: err }))
+        .catch(err => res.json({ message: 'ERROR: There is a problem, figure it out', error: err }))
 }
 
 module.exports.createNewPet = (req, res) => {
@@ -27,7 +27,7 @@ module.exports.createNewPet = (req, res) => {
         .then(newlyCreatedPet => {
             res.json({ results: newlyCreatedPet })
         })
-        .catch(err => res.json({ message: 'ERROR: There is a problem', error: err }))
+        .catch(err => res.json({ message: 'ERROR: There is a problem, figure it out', error: err }))
 }
 
 module.exports.updatePet = (req, res) => {
@@ -41,7 +41,7 @@ module.exports.updatePet = (req, res) => {
         .then(updatedPet => {
             res.json({ results: updatedPet })
         })
-        .catch(err => res.json({ message: 'ERROR: There is a problem', error: err }))
+        .catch(err => res.json({ message: 'ERROR: There is a problem, figure it out', error: err }))
 }
 
 module.exports.deletePet = (req, res) => {
@@ -51,5 +51,5 @@ module.exports.deletePet = (req, res) => {
         .then(deletedPet => {
             res.json({ results: deletedPet })
         })
-        .catch(err => res.json({ message: 'ERROR: There is a problem', error: err }))
+        .catch(err => res.json({ message: 'ERROR: There is a problem, figure it out', error: err }))
 }

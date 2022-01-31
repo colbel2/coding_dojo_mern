@@ -11,8 +11,4 @@ module.exports = (app)=>{
     app.put("/api/pets/:id", PetController.updatePet)
     
     app.delete("/api/pets/:id", PetController.deletePet)
-    
-    
-    
-
 }

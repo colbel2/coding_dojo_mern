@@ -19,24 +19,28 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App container">
-        <h1>Pet Shelter</h1>
-        <Link to = "/new" className='btn btn-secondary'>Add a pet to the shelter</Link>
+        <h1 >Pet Shelter</h1>
+        
         <Switch>
 
           <Route exact path= "/">
+            <h2>These Pets are looking for a good home!</h2>
             <AllPets newPetAdded={newPetAdded}></AllPets>
+            <Link to = "/new" className="btn btn-primary position-relative position-absolute top-0 end-0">Add a pet to the shelter</Link>
           </Route>
 
           <Route exact path = "/new">
-          <Link to = "/" className='btn btn-secondary'>Back to home</Link>
+          <Link to = "/" className='btn btn-secondary position-relative position-absolute top-0 end-0'>Back to home</Link>
             <NewPetForm newPetAdded={newPetAdded} setNewPetAdded= {setNewPetAdded} ></NewPetForm>
           </Route>
 
           <Route exact path = "/pets/:id">
+          <Link to = "/" className='btn btn-secondary position-relative position-absolute top-0 end-0'>Back to home</Link>
             <OnePet></OnePet>
           </Route>
 
           <Route exact path = "/pets/edit/:id">
+          <Link to = "/" className='btn btn-secondary position-relative position-absolute top-0 end-0'>Back to home</Link>
             <EditPetForm/>
           </Route>
 

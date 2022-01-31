@@ -13,30 +13,49 @@ const OnePet = () => {
     useEffect(()=>{
         axios.get(`http://localhost:8000/api/pets/${id}`)
         .then(res=>{
-            console.log("response when making request for one ninja", res)
+            console.log("Program response when looking for one pet details====>", res)
             setPetDetails(res.data.results)
         })
         .catch(err=> console.log(err))
     }, [])
 
-    const deletePet = ()=>{
+    const adoptPet = ()=>{
         console.log("deleting!!!")
         axios.delete(`http://localhost:8000/api/pets/${id}`)
             .then(res=>{
-                console.log("response when deleting", res)
+                console.log("Program adopting(deleting) Pet====>", res)
                 history.push("/")
             })
             .catch(err=>console.log(err))
     }
     
 
+
     return (
         <div>
+            <button onClick = {adoptPet} className="btn btn-danger position-relative position-absolute bottom-75 end-0">Adopt Pet</button>
+            
             <h4>Details about {petDetails.name}</h4>
-            <p>Type: {petDetails.type}</p>
-            <p>Description: {petDetails.description}</p>
-            <p>Skills: {petDetails.skillsOne}{petDetails.skillsTwo}{petDetails.skillsThree}</p>
-            <button onClick = {deletePet} className="btn btn-danger">Delete Pet</button>
+            <div className='container' style = {{border: "1px solid black"}}>   
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Skills</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><h4>{petDetails.name}</h4></td>
+                            <td>{petDetails.type}</td>
+                            <td>{petDetails.skillsOne}</td>
+                            <td>{petDetails.skillsTwo}</td>
+                            <td>{petDetails.skillsThree}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            <button class='btn-primary'>Like {petDetails.name}</button></div>
         </div>
     );
 };

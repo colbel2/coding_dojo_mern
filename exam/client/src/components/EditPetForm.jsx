@@ -12,7 +12,7 @@ const EditPetForm = () => {
     useEffect(()=>{
         axios.get(`http://localhost:8000/api/pets/${id}`)
         .then(res=>{
-            console.log("response is this-->", res)
+            console.log("Program response to selected pet", res)
             setPetInfo(res.data.results)
         })
         .catch(err=> console.log(err))
@@ -21,7 +21,7 @@ const EditPetForm = () => {
     const history = useHistory();
 
     const changeHandler = (e)=>{
-        console.log("changed in form detected!!")
+        console.log("ALERT: The form has changed!!")
         if(e.target.type === "control"){
             setPetInfo({
                 ...petInfo,
@@ -39,7 +39,7 @@ const EditPetForm = () => {
         e.preventDefault();
         axios.put(`http://localhost:8000/api/pets/${id}`, petInfo)
             .then(res=>{
-                console.log("res after put request-->", res)
+                console.log("Put request complete!===>", res)
                 history.push("/")
             })
             .catch(err=>console.log(err))
@@ -81,19 +81,19 @@ const EditPetForm = () => {
                         type="text" 
                         name="skillsOne"
                         className="form-control" 
-                        checked={petInfo.skills} 
+                        value={petInfo.skillsOne} 
                         onChange={changeHandler} />
-                        <input 
+                    <input 
                         type="text" 
                         name="skillsTwo"
                         className="form-control" 
-                        checked={petInfo.skills} 
+                        value={petInfo.skillsTwo} 
                         onChange={changeHandler} />
-                        <input 
+                    <input 
                         type="text" 
                         name="skillsThree"
                         className="form-control" 
-                        checked={petInfo.skills} 
+                        value={petInfo.skillsThree}  
                         onChange={changeHandler} />
                 </div>
                 <input type="submit" value="Edit Pet!" className="btn btn-success mt-3" />
