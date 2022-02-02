@@ -1,0 +1,14 @@
+windows key + r
+    opens Run
+cmd enter
+    opens command prompt
+cd OneDrive/Desktop/<fileName>
+    this takes you to the desktop on big PC
+cd Desktop/<fileName>
+    this takes you to desktop on laptop
+cd ..
+    this goes up a folder
+mkdir <folderName>
+    this makes a new folder in the directory you are in
+type nul > <fileName>
+    this makes a new file in the directory you are in
