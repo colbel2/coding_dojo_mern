@@ -3,18 +3,19 @@ import { useParams } from "react-router";
 
 
 const Info = () => {
-    const { id, borderStyle, fontSize} = useParams();
-
-
+    const { id, borderStyle="solid", fontsize=12 } = useParams();
+    
+    console.log(id, borderStyle,fontsize)
 
     return (
-        <div style = {{border: `1px  ${borderStyle} black`, fontSize: `${fontSize}`}}>
+        <div style = {{border: `1px ${borderStyle} black`, fontSize: `${fontsize}px`}}>
             { isNaN(id)?
-                <p>This is {id}'s' Page. This belongs to {id}.</p>:
+                <h1>This is {id}'s page. This belongs to {id}</h1>:
                 <h1>Viewing the profile of person # {id}</h1>
-            }  
-            <p>Note: You picked {borderStyle} and {fontSize}</p>
+        }
+        <p>Note: you picked {borderStyle} for border and {fontsize} for font size </p>
         </div>
+
     );
 };
 

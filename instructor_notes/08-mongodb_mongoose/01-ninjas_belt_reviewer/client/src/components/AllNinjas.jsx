@@ -4,10 +4,25 @@ import {
     Link 
   } from "react-router-dom";
 
+import io from 'socket.io-client';
+
 const AllNinjas = (props) => {
+
+    const [socket] = useState(() => io(':8000')) //this line of code enables a client to connect to our server running on port 8000
+
 
     let [allNinjas, setAllNinjas] = useState([]) //create a state variable array to store all the ninjas we get back from api
     let [deleted, setDeleted] = useState(false)
+
+    //another useEffect for the websocket
+    useEffect(()=>{
+        socket.on("update_list_of_ninjas", newNinjaInfo=>{
+            let allNinjasCopy = [...allNinjas];
+            setAllNinjas([newNinjaInfo, ...allNinjasCopy])
+
+            // setAllNinjas(currentNinjaList=>[newNinjaInfo, ...currentNinjaList])
+        })
+    },[])
 
 
     useEffect(()=>{

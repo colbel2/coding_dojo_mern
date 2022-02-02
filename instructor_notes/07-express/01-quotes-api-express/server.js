@@ -3,7 +3,7 @@ const app = express(); //create a variable called app--> this variable is an ins
 const port = 8000;
 
 //need these two lines below to be able to read and extract the information received from post requests
-app.use(express.json())
+app.use(express.json()) 
 app.use(express.urlencoded({extended:true})) //be able to read form information
 
 

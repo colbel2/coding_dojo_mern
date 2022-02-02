@@ -3,12 +3,12 @@ var beatles = ['Paul', 'George', 'John', 'Ringo'];
 
 
 //functions create a functional scope
-function showMeBeatlesNames() {
+function showMeBeatlesNames(){
     console.log(beatles)
     //a variable that is created/defined inside of a function is functionally scoped, meaning only the function that owns this variable can access/see it
     var bestPlayerOfAlltime = "Lebron James"
 
-    for (let i = 0; i < 10; i++) {
+    for(let i = 0; i<10; i++){
         console.log(i)
     }
 
@@ -17,7 +17,7 @@ function showMeBeatlesNames() {
 }
 
 //if statement creates a block scope
-if (1 === 1) {
+if(1 ===1 ){
     let flag = "yes, 1 is one. One."
 }
 
@@ -28,7 +28,7 @@ if (1 === 1) {
 showMeBeatlesNames()
 
 let flag2;
-if (2 === 2) {
+if(2 ===2 ){
     flag2 = "yes, 2 is two. Two chainz."
 }
 
@@ -40,6 +40,8 @@ console.log(flag2)
 1. global scope- anything thats not in a loop or a function is globally scoped-meaning that functions and loops can see it
 2. Functional scope- a ariable that is created/defined inside of a function is functionally scoped, meaning only the function that owns this variable can access/see it
 3. Block scoped- anything within curly braces from things like for loops and conditionals
+
+
 */
 
 
@@ -53,3 +55,4 @@ console.log(topFrameworks)
 topFrameworks = ['React', 'Vue']
 
 console.log(topFrameworks)
+
