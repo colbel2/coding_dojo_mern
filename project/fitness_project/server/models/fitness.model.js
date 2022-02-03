@@ -3,23 +3,23 @@ const mongoose = require('mongoose');
 const FitnessSchema = new mongoose.Schema({
     workoutName: {
         type: String,
-        required: [true, "Name of workout needed! Arms, Back, Chest, etc.!!!"],
-        minlength: [2, "Workout must be atleast 2 characters long!"]
+        // required: [true, "Name of workout needed! Arms, Back, Chest, etc.!!!"],
+        // minlength: [2, "Workout must be atleast 2 characters long!"]
     },
     excercise: {
         type: String,
-        required: [true, "Exercise is required! Squats, Barbell Bench Press, etc.!!!"],
-        minlength: [2, "Exercise must be atleast 2 characters long!"]
+        // required: [true, "Exercise is required! Squats, Barbell Bench Press, etc.!!!"],
+        // minlength: [2, "Exercise must be atleast 2 characters long!"]
     },
     sets: {
         type: Number,
-        required: [true, "Number of Sets is required!"],
-        min_value: [1, "Must be atleast 1 Set"]
+        // required: [true, "Number of Sets is required!"],
+        // min_value: [1, "Must be atleast 1 Set"]
     },
     setOneReps: {
         type: Number,
-        required: [true, "Reps required!"],
-        min_value: [1, "Must be atleast one rep"]
+        // required: [true, "Reps required!"],
+        // min_value: [1, "Must be atleast one rep"]
     },
     setTwoReps: {
         type: Number
