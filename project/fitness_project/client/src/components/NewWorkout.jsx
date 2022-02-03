@@ -8,26 +8,42 @@ const NewWorkoutForm = (props) => {
     let [workoutName, setWorkoutName] = useState("")
     let [exercise, setExercise] = useState("")
     let [sets, setSets] = useState(null)
-    let [setOneReps, setSetOneReps] = useState("")
-    let [skillsTwo, setSkillsTwo] = useState("")
-    let [skillsThree, setSkillsThree] = useState("")
+    let [setOneReps, setSetOneReps] = useState(null)
+    let [setTwoReps, setSetTwoReps] = useState(null)
+    let [setThreeReps, setSetThreeReps] = useState(null)
+    let [setFourReps, setSetFourReps] = useState(null)
+    let [setFiveReps, setSetFiveReps] = useState(null)
+    let [setSixReps, setSetSixReps] = useState(null)
+    let [setOneWeight, setSetOneWeight] = useState(null)
+    let [setTwoWeight, setSetTwoWeight] = useState(null)
+    let [setThreeWeight, setSetThreeWeight] = useState(null)
+    let [setFourWeight, setSetFourWeight] = useState(null)
+    let [setFiveWeight, setSetFiveWeight] = useState(null)
+    let [setSixWeight, setSetSixWeight] = useState(null)
+    let [date, setDate] = useState("")
+    let [notes, setNotes] = useState("")
 
+    
+    
     let [formErrors, setFormErrors] = useState({})
 
     const history = useHistory();
+    console.log("TESTING: IT WORKED")
 
-    const createPetSubmitHandler = (e)=>{
+    const createFitnessSubmitHandler = (e)=>{
         e.preventDefault();
 
-        let formInfoObj = {workoutName, type, sets, skillsOne, skillsTwo, skillsThree};
+        let formInfoObj = {workoutName, exercise, sets, setOneReps, setTwoReps, setThreeReps, setFourReps, setFiveReps, setSixReps, setOneWeight, setTwoWeight, setThreeWeight, setFourWeight, setFiveWeight, setSixWeight, notes, date};
 
-        axios.post("http://localhost:8000/api/pets", formInfoObj)
+        axios.post("http://localhost:8000/api/fitness", formInfoObj)
             .then(res=>{
                 console.log("Post request respons===>", res)
 
                 if(res.data.error){
                     setFormErrors(res.data.error.errors)
-                }else{
+                }
+                else{
+                    console.log("TESTING: IT WORKED")
                     history.push("/")
                 }
             })
@@ -36,29 +52,29 @@ const NewWorkoutForm = (props) => {
 
     return (
         <div>
-            <form className='row g-3' onSubmit = {createPetSubmitHandler}>
+            <form className='row g-3' onSubmit = {createFitnessSubmitHandler}>
                 <div className="form-group col md-6 ">
-                    <label htmlFor="">Name</label>
-                    <input onChange = {(e)=>{setWorkoutName(e.target.value)}} type="text" workoutName="" id="" className="form-control col" />
+                    <label htmlFor="">Workout</label>
+                    <input onChange = {(e)=>{setWorkoutName(e.target.value)}} type="text" name="" id="" className="form-control col" />
                     <p className="text-danger">{formErrors.workoutName?.message}</p>
                 </div>
                 <div className="form-group col md-6  ">
-                    <label htmlFor="">Type</label>
-                    <input onChange = {(e)=>{setType(e.target.value)}} type="text" workoutName="" id="" className="form-control col" />
+                    <label htmlFor="">Exercise</label>
+                    <input onChange = {(e)=>{setExercise(e.target.value)}} type="text" name="" id="" className="form-control col" />
                     <p className="text-danger">{formErrors.type?.message}</p>
                 </div>
                 <div className="form-group form-control form-control-lg">
-                    <label htmlFor="">Description</label>
-                    <input onChange = {(e)=>{setSets(e.target.value)}} type="text" workoutName="" id="" className="form-control" />
+                    <label htmlFor="">Sets</label>
+                    <input onChange = {(e)=>{setSets(e.target.value)}} type="text" name="" id="" className="form-control" />
                     <p className="text-danger">{formErrors.sets?.message}</p>
                 </div>
                 <div className="form-group ">
-                    <label htmlFor="">Skills (Optional)</label>
-                    <input onChange = {(e)=>{setOneReps(e.target.value)}} type="text" workoutName="" id="" className="form-control" />
-                    <input onChange = {(e)=>{setSkillsTwo(e.target.value)}} type="text" workoutName="" id="" className="form-control" />
-                    <input onChange = {(e)=>{setSkillsThree(e.target.value)}} type="text" workoutName="" id="" className="form-control" />
+                    <label htmlFor="">Set #1 Weight</label>
+                    <input onChange = {(e)=>{setSetOneWeight(e.target.value)}} type="text" name="" id="" className="form-control" />
+                    <input onChange = {(e)=>{setSetOneReps(e.target.value)}} type="text" name="" id="" className="form-control" />
+                    <input onChange = {(e)=>{setSetTwoWeight(e.target.value)}} type="text" name="" id="" className="form-control" />
                 </div>
-                <input type="submit" value="Add Pet!" className="btn btn-success mt-3" />
+                <input type="submit" value="Submit Workout" className="btn btn-success mt-3" />
             </form>
         </div>
     );

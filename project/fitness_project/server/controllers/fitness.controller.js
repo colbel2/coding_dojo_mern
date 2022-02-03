@@ -22,7 +22,7 @@ module.exports.findOneWorkout = (req, res) => {
 
 module.exports.createNewWorkout = (req, res) => {
     console.log("Attempting to create a new workout!!!")
-    console.log("REQ.BODY--->", req.body)
+    console.log("SUCCESS!!! REQ.BODY--->", req.body)
     Fitness.create(req.body) 
         .then(newlyCreatedWorkout => {
             res.json({ results: newlyCreatedWorkout })

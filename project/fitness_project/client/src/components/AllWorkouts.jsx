@@ -26,15 +26,16 @@ const AllWorkouts = (props) => {
                         <table>
                             <thead>
                                 <tr>
-                                    <th>Name</th>
-                                    <th>Type</th>
-                                    <th>Actions</th>
+                                    <th>Workout</th>
+                                    <th>Exercise</th>
+                                    <th>Sets</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><h4>{workoutObj.name}</h4></td>
-                                    <td>{workoutObj.type}</td>
+                                    <td><h4>{workoutObj.workoutName}</h4></td>
+                                    <td>{workoutObj.exercise}</td>
+                                    <td>{workoutObj.sets}</td>
                                     <td><Link to={`/fitness/${workoutObj._id}`} className = "btn btn-info" >Details</Link> | &nbsp; 
                                         <Link to={`/fitness/edit/${workoutObj._id}`} className = "btn btn-warning" >Edit</Link> | &nbsp;
                                     </td>
