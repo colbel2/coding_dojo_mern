@@ -19,7 +19,30 @@ const FitnessSchema = new mongoose.Schema({
     setOneReps: {
         type: Number,
         required: [true, "Reps required!"],
-        min_value: {1, "Must be atleast one rep"}
+        min_value: [1, "Must be atleast one rep"]
+    },
+    setTwoReps: {
+        type: Number
+    },
+    setThreeReps: {
+        type: Number
+    },
+    setFourReps: {
+        type: Number
+    },
+    setFiveReps: {
+        type: Number
+    },
+    setSixReps: {
+        type: Number
+    },
+    date: {
+        type: String,
+        format: Date
+    },
+    notes: {
+        type: String,
+
     }
 });
 
