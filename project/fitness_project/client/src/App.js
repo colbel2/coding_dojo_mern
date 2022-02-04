@@ -22,7 +22,7 @@ function App() {
   return (
     <BrowserRouter>
       <div className = "App Container">
-        <h1>Hello from front end: TEST!</h1>
+        {/* <h1>Hello from front end: TEST!</h1> */}
         
         <Switch>
           

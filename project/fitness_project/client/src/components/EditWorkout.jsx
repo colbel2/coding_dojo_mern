@@ -46,18 +46,20 @@ const EditWorkoutForm = () => {
     }
 
     return (
-        <div>
-            <h4>Edit</h4>
+        <div class="form-style-2">
+            <div class="form-style-2 heading">Edit</div>
             <form onSubmit = {updateWorkoutSubmitHandler}>
-                <div className="form-group">
-                    <label htmlFor="">Workout</label>
+                {/* <div className="form-group"> */}
+                    <label for="field1"><span>Workout<span class = "required">*</span></span>
                     <input 
                         type="text" 
                         name="name" 
-                        className="form-control" 
+                        class="input-field"
+                        name="field1"
                         value={workoutInfo.workoutName} 
                         onChange={changeHandler}/>
-                </div>
+                        </label>
+                {/* </div> */}
                 <div className="form-group">
                     <label htmlFor="">Exercise</label>
                     <input 
