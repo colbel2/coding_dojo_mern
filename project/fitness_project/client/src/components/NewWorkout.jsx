@@ -69,10 +69,26 @@ const NewWorkoutForm = (props) => {
                     <p className="text-danger">{formErrors.sets?.message}</p>
                 </div>
                 <div className="form-group ">
-                    <label htmlFor="">Set #1 Weight</label>
+                    <label htmlFor="">Weight</label>
                     <input onChange = {(e)=>{setSetOneWeight(e.target.value)}} type="text" name="" id="" className="form-control" />
-                    <input onChange = {(e)=>{setSetOneReps(e.target.value)}} type="text" name="" id="" className="form-control" />
                     <input onChange = {(e)=>{setSetTwoWeight(e.target.value)}} type="text" name="" id="" className="form-control" />
+                    <input onChange = {(e)=>{setSetThreeWeight(e.target.value)}} type="text" name="" id="" className="form-control" />
+                    <input onChange = {(e)=>{setSetFourWeight(e.target.value)}} type="text" name="" id="" className="form-control" />
+                    <input onChange = {(e)=>{setSetFiveWeight(e.target.value)}} type="text" name="" id="" className="form-control" />
+                    <input onChange = {(e)=>{setSetSixWeight(e.target.value)}} type="text" name="" id="" className="form-control" />
+                </div>
+                <div className="form-group ">
+                    <label htmlFor="">Reps</label>
+                    <input onChange = {(e)=>{setSetOneReps(e.target.value)}} type="text" name="" id="" className="form-control" />
+                    <input onChange = {(e)=>{setSetTwoReps(e.target.value)}} type="text" name="" id="" className="form-control" />
+                    <input onChange = {(e)=>{setSetThreeReps(e.target.value)}} type="text" name="" id="" className="form-control" />
+                    <input onChange = {(e)=>{setSetFourReps(e.target.value)}} type="text" name="" id="" className="form-control" />
+                    <input onChange = {(e)=>{setSetFiveReps(e.target.value)}} type="text" name="" id="" className="form-control" />
+                    <input onChange = {(e)=>{setSetSixReps(e.target.value)}} type="text" name="" id="" className="form-control" />
+                </div>
+                <div className="form-group">
+                    <label htmlfor="">Notes</label>
+                    <input onChange={(e)=>{setNotes(e.target.value)}} type="text" className='form-control'/>
                 </div>
                 <input type="submit" value="Submit Workout" className="btn btn-success mt-3" />
             </form>
