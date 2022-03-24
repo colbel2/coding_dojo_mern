@@ -9,5 +9,5 @@ app.use(cors())
 
 require("./server/config/config")
 require('./server/routes/fitness.routes')(app) // this is not included only during testing of server connection
-
+require('./server/routes/user.routes')(app)
 app.listen( port, () => console.log(`Listening on port: ${port}`) );
