@@ -7,7 +7,8 @@ import {
   Route,
   Link
 } from "react-router-dom";
-
+import AllNinjas from './components/AllNinjas';
+import OneNinja from './components/OneNinja';
 
 function App() {
   return (
@@ -17,7 +18,14 @@ function App() {
           <Switch>
             <Route exact path="/">
               <NewNinjaForm></NewNinjaForm>
+              <hr />
+              <AllNinjas></AllNinjas>
             </Route>
+
+            <Route exact path ="/oneNinja/:id">
+              <OneNinja></OneNinja>
+            </Route>
+
           </Switch>
       </div>
     </BrowserRouter>
