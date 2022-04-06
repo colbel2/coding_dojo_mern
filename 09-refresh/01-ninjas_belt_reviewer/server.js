@@ -1,8 +1,12 @@
 const express = require("express") //import express
-
+const cors = require("cors")
 
 const app = express(); //initialize express
 const port = 8000; // specify port in a variable
+
+app.use(express.json())
+app.use(express.urlencoded({extended:true}))
+app.use(cors())
 
 //require makes it where all the code from the file u are requiring goes on this line
 require("./server/config/config")
