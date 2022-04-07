@@ -9,6 +9,7 @@ import {
 } from "react-router-dom";
 import AllNinjas from './components/AllNinjas';
 import OneNinja from './components/OneNinja';
+import EditNinja from './components/EditNinja';
 
 function App() {
   return (
@@ -25,6 +26,11 @@ function App() {
             <Route exact path ="/oneNinja/:id">
               <OneNinja></OneNinja>
             </Route>
+
+            <Route exact path ="/oneNinja/edit/:id">
+              <EditNinja></EditNinja>
+            </Route>
+
 
           </Switch>
       </div>
