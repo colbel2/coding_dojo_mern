@@ -1,6 +1,7 @@
 
 import './App.css';
 import NewNinjaForm from './components/NewNinjaForm';
+import React, { useState } from 'react';
 import {
   BrowserRouter,
   Switch,
@@ -12,15 +13,20 @@ import OneNinja from './components/OneNinja';
 import EditNinja from './components/EditNinja';
 
 function App() {
+  let [newNinjaAdded, setNewNinjaAdded] = useState(false);
   return (
     <BrowserRouter>
       <div className="App container">
         <h1>Ninja Review</h1>
           <Switch>
             <Route exact path="/">
-              <NewNinjaForm></NewNinjaForm>
+              <NewNinjaForm newNinjaAdded={newNinjaAdded} setNewNinjaAdded={setNewNinjaAdded}></NewNinjaForm>
               <hr />
-              <AllNinjas></AllNinjas>
+              <AllNinjas newNinjaAdded={newNinjaAdded}></AllNinjas>
+            </Route>
+
+            <Route exact path="/new">
+              <NewNinjaForm/>
             </Route>
 
             <Route exact path ="/oneNinja/:id">

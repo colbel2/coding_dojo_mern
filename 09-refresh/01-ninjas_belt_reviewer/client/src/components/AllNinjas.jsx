@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Link } from "react-router-dom";
 
 
-const AllNinjas = () => {
+const AllNinjas = (props) => {
 
     let [allNinjas, setAllNinjas] = useState([])
     let [deleted, setDeleted] = useState(false);
@@ -15,7 +15,7 @@ const AllNinjas = () => {
                 setAllNinjas(res.data.results)
             })
             .catch(err => console.log("ERROR", err))
-    }, [deleted])
+    }, [deleted, props.newNinjaAdded])
 
     const deleteNinja = (ninjaId)=> {
         axios.delete(`http://localhost:8000/api/ninja/${ninjaId}`)

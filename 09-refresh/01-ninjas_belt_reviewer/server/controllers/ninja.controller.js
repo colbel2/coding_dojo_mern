@@ -22,6 +22,8 @@ module.exports.findOne = (req, res) => {
 }
 
 module.exports.createNewNinja = (req,res) => {
+    console.log("trying to create new ninja")
+    console.log("REQ.BODY---->", req.body)
     Ninja.create(req.body)
         .then(newlyCreatedNinja => 
             res.json({results: newlyCreatedNinja}))
